@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/taskavan/.RiderProjects/Todolist/Todolist.csproj": {}
+    "/home/taskavan/.RiderProjects/maui-todolist/Todolist.csproj": {}
   },
   "projects": {
-    "/home/taskavan/.RiderProjects/Todolist/Todolist.csproj": {
+    "/home/taskavan/.RiderProjects/maui-todolist/Todolist.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/taskavan/.RiderProjects/Todolist/Todolist.csproj",
+        "projectUniqueName": "/home/taskavan/.RiderProjects/maui-todolist/Todolist.csproj",
         "projectName": "Todolist",
-        "projectPath": "/home/taskavan/.RiderProjects/Todolist/Todolist.csproj",
+        "projectPath": "/home/taskavan/.RiderProjects/maui-todolist/Todolist.csproj",
         "packagesPath": "/home/taskavan/.nuget/packages/",
-        "outputPath": "/home/taskavan/.RiderProjects/Todolist/obj/",
+        "outputPath": "/home/taskavan/.RiderProjects/maui-todolist/obj/",
         "projectStyle": "PackageReference",
         "crossTargeting": true,
         "configFilePaths": [
@@ -65,7 +65,7 @@
             },
             "Microsoft.Maui.Graphics": {
               "target": "Package",
-              "version": "[7.0.59, )",
+              "version": "[7.0.81, )",
               "autoReferenced": true
             },
             "Xamarin.Android.Glide": {

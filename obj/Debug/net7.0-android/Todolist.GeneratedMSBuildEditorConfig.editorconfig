@@ -12,33 +12,33 @@ build_property.EnableSingleFileAnalyzer = true
 build_property.EnableTrimAnalyzer = false
 build_property.IncludeAllContentForSelfExtract = 
 build_property.RootNamespace = Todolist
-build_property.ProjectDir = /home/taskavan/.RiderProjects/Todolist/
+build_property.ProjectDir = /home/taskavan/.RiderProjects/maui-todolist/
 
-[/home/taskavan/.RiderProjects/Todolist/App.xaml]
+[/home/taskavan/.RiderProjects/maui-todolist/App.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Todolist.App.xaml
 build_metadata.AdditionalFiles.TargetPath = App.xaml
 build_metadata.AdditionalFiles.RelativePath = App.xaml
 
-[/home/taskavan/.RiderProjects/Todolist/AppShell.xaml]
+[/home/taskavan/.RiderProjects/maui-todolist/AppShell.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Todolist.AppShell.xaml
 build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
 build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
 
-[/home/taskavan/.RiderProjects/Todolist/MainPage.xaml]
+[/home/taskavan/.RiderProjects/maui-todolist/MainPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Todolist.MainPage.xaml
 build_metadata.AdditionalFiles.TargetPath = MainPage.xaml
 build_metadata.AdditionalFiles.RelativePath = MainPage.xaml
 
-[/home/taskavan/.RiderProjects/Todolist/Resources/Styles/Colors.xaml]
+[/home/taskavan/.RiderProjects/maui-todolist/Resources/Styles/Colors.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Todolist.Resources.Styles.Colors.xaml
 build_metadata.AdditionalFiles.TargetPath = Resources/Styles/Colors.xaml
 build_metadata.AdditionalFiles.RelativePath = Resources/Styles/Colors.xaml
 
-[/home/taskavan/.RiderProjects/Todolist/Resources/Styles/Styles.xaml]
+[/home/taskavan/.RiderProjects/maui-todolist/Resources/Styles/Styles.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Todolist.Resources.Styles.Styles.xaml
 build_metadata.AdditionalFiles.TargetPath = Resources/Styles/Styles.xaml

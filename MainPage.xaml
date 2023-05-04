@@ -18,11 +18,11 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"></RowDefinition>
                 </Grid.RowDefinitions>
-                <Entry Placeholder="Name"/>
-                <Button Grid.Column="1" Text="+"/>
+                <Entry Placeholder="Name" x:Name="text" x:DataType="viewModel:ViewModel"/>
+                <Button Grid.Column="1" x:DataType="viewModel:ViewModel" Text="+" Command="{Binding  CreateCommand}" CommandParameter="{Binding Source={Reference text }, Path=Text}"/>
             </Grid>
 
-            <ListView x:DataType="viewModel:ViewModel" x:Name="taskList"  SelectedItem="{Binding SelectedTask,Mode=TwoWay}" 
+            <ListView x:DataType="viewModel:ViewModel" x:Name="task"  SelectedItem="{Binding Selected,Mode=TwoWay}" 
                   ItemsSource="{Binding ListTasks}" Margin="15,50,15,0" >
             <ListView.ItemTemplate>
                 <DataTemplate x:DataType="model:Model"  >
@@ -51,9 +51,9 @@
                                         </DataTrigger>
                                     </Label.Triggers>
                                 </Label>
-                                <Label Grid.Row="0" Grid.Column="2" Text="{Binding CountElements}" VerticalOptions="Center" Margin="5" FontSize="17" ></Label>
+                                <Label Grid.Row="0" Grid.Column="2" Text="{Binding Value}" VerticalOptions="Center" Margin="5" FontSize="17" ></Label>
                                 <ImageButton VerticalOptions="Center" Source="trash.png" Grid.Row="0" Grid.Column="3" 
-                                             BackgroundColor="Transparent" WidthRequest="40" Command="{Binding DeleteTaskCommand,
+                                             BackgroundColor="Transparent" WidthRequest="40" Command="{Binding DeleteCommand,
                                     Source={RelativeSource AncestorType={x:Type viewModel:ViewModel}}}" 
                                         CommandParameter="{Binding}" >
                                 </ImageButton>
