@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewModel="clr-namespace:Todolist.ViewModel"
              xmlns:model="clr-namespace:Todolist.Model"
-             x:Class="Todolist.MainPage">
+             x:Class="Todolist.MainPage"
+             x:DataType="viewModel:ViewModel">
 
     <ScrollView>
         <StackLayout
@@ -18,11 +19,12 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"></RowDefinition>
                 </Grid.RowDefinitions>
-                <Entry Placeholder="Name" x:Name="text" x:DataType="viewModel:ViewModel"/>
-                <Button Grid.Column="1" x:DataType="viewModel:ViewModel" Text="+" Command="{Binding  CreateCommand}" CommandParameter="{Binding Source={Reference text }, Path=Text}"/>
+                <Entry Placeholder="Name" x:Name="entrytext" ></Entry>
+                <Button Grid.Column="1" x:DataType="viewModel:ViewModel" Text="+" Command="{Binding  CreateCommand}"
+                        CommandParameter="{Binding Source={x:Reference  entrytext}, Path=Text}"/>
             </Grid>
 
-            <ListView x:DataType="viewModel:ViewModel" x:Name="task"  SelectedItem="{Binding Selected,Mode=TwoWay}" 
+            <ListView x:DataType="viewModel:ViewModel"   SelectedItem="{Binding Selected}" 
                   ItemsSource="{Binding ListTasks}" Margin="15,50,15,0" >
             <ListView.ItemTemplate>
                 <DataTemplate x:DataType="model:Model"  >
@@ -52,11 +54,11 @@
                                     </Label.Triggers>
                                 </Label>
                                 <Label Grid.Row="0" Grid.Column="2" Text="{Binding Value}" VerticalOptions="Center" Margin="5" FontSize="17" ></Label>
-                                <ImageButton VerticalOptions="Center" Source="trash.png" Grid.Row="0" Grid.Column="3" 
+                                <Button VerticalOptions="Center" Text="D" Grid.Row="0" Grid.Column="3" 
                                              BackgroundColor="Transparent" WidthRequest="40" Command="{Binding DeleteCommand,
                                     Source={RelativeSource AncestorType={x:Type viewModel:ViewModel}}}" 
                                         CommandParameter="{Binding}" >
-                                </ImageButton>
+                                </Button>
                                 
                             </Grid>
                          

@@ -28,14 +28,15 @@ public class ViewModel : INotifyPropertyChanged
 
     private string[] TrimString(string str)
     {
+        var result = 1;
         var value = str.LastIndexOf(" ");
-        if (int.TryParse(str[value..], out int result)){}
-        else result = 1;
-            
+        if(value != -1)
+            if (int.TryParse(str[value..], out result)){}
+
         if (value > 0)
             if (string.IsNullOrWhiteSpace(str[..value]))
-                return new string[] { null, null };
-        return new string[] { str[..value], result.ToString() };
+                return new string[] { str[..value], result.ToString() };
+        return new string[] { null, null };
     }
     
     private void Create(string entrytext)
@@ -57,7 +58,8 @@ public class ViewModel : INotifyPropertyChanged
         task = new Model.Model();
         CreateCommand = new Command<string>(Create, (current) =>  current != null ? !string.IsNullOrEmpty(TrimString(current)[0]) : false);
         DeleteCommand = new Command<Model.Model>(Delete);
-            
+        EditCommand = new Command(Edit);
+
     }
     public string Texttask
     {
