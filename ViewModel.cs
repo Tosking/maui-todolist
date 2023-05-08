@@ -28,24 +28,27 @@ public class ViewModel : INotifyPropertyChanged
 
     private string[] TrimString(string str)
     {
-        var result = 1;
+        var result = -1;
         var value = str.LastIndexOf(" ");
         if(value != -1)
             if (int.TryParse(str[value..], out result)){}
-
-        if (value > 0)
-            if (string.IsNullOrWhiteSpace(str[..value]))
+        
+        if (!string.IsNullOrWhiteSpace(str))
+            if(result > 0)
                 return new string[] { str[..value], result.ToString() };
+            else
+                return new string[] { str, null};
         return new string[] { null, null };
     }
     
     private void Create(string entrytext)
     {
+        var value = -1;
         var result = TrimString(entrytext);
-        if (result == null)
-            return;
-        else
+        if (int.TryParse(result[1], out value))
             ListTasks.Add(new Model.Model() { Text = result[0], Finished = false, Value = int.Parse(result[1]) });
+        else
+            ListTasks.Add(new Model.Model() { Text = result[0], Finished = false, Value = 1 });
     }
 
     private void Delete(Model.Model CurrentTask)
