@@ -24,9 +24,9 @@
                         CommandParameter="{Binding Source={x:Reference  entrytext}, Path=Text}"/>
             </Grid>
 
-            <ListView x:DataType="viewModel:ViewModel"   SelectedItem="{Binding Selected}" 
-                  ItemsSource="{Binding ListTasks}" Margin="15,50,15,0" >
-            <ListView.ItemTemplate>
+            <ListView x:DataType="viewModel:ViewModel" x:Name="ListViewArr"  SelectedItem="{Binding Selected}" 
+                  ItemsSource="{Binding ListTasks}" Margin="5,25,5,0" >
+                <ListView.ItemTemplate>
                 <DataTemplate x:DataType="model:Model"  >
                     <ViewCell >
                         <ViewCell.View>
@@ -67,6 +67,8 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+            <Label Text="{Binding Selected.Text, StringFormat='Selected = {0}'}"></Label>
+            <Label Text="{Binding Source={x:Reference ListViewArr}, Path=SelectedItem.Text, StringFormat='SelectedItem = {0}'}"></Label>
 
         </StackLayout>
     </ScrollView>

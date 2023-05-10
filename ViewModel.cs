@@ -19,10 +19,19 @@ public class ViewModel : INotifyPropertyChanged
         get=> task;
         set
         {
+            if (task == value)
+                return;
             task = value;
-                if(task != null)
-                    Edit();
-                OnPropertyChanged(nameof(Selected));
+            OnPropertyChanged(nameof(Selected));
+            if (task != null)
+            {
+                Edit();
+            }
+
+           
+           
+            //Selected = null;
+            
         }
     }
 
@@ -45,6 +54,7 @@ public class ViewModel : INotifyPropertyChanged
     {
         var value = -1;
         var result = TrimString(entrytext);
+        
         if (int.TryParse(result[1], out value))
             ListTasks.Add(new Model.Model() { Text = result[0], Finished = false, Value = int.Parse(result[1]) });
         else
@@ -94,10 +104,9 @@ public class ViewModel : INotifyPropertyChanged
             {
                 var str = TrimString(text);
                 if (str[0] != null)
-                {
                     Selected.Text = str[0];
+                if (str[1] != null)
                     Selected.Value = int.Parse(str[1]);
-                }
 
                 Selected = null;
             }
